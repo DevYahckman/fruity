@@ -23,7 +23,8 @@ module.exports = {
         primary: "#F28123",
         lightWhite:'#f5f5f5',
         deepBlack:'#051922',
-        lightColor: '#555'
+        lightColor: '#555',
+        lightBg:'#f5f5f5'
 
       },
     },

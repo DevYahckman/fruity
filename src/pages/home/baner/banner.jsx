@@ -67,7 +67,7 @@ function Banner(props) {
          { item.icon}
           <div>
             <p className="text-deepBlack text-xl font-bold  ">{item.main}</p>
-            <p className="font-xs font-normal text-1xl ">{item.sub}</p>
+            <p className="text-lightColor font-xs font-normal text-1xl ">{item.sub}</p>
           </div>
         </div>
         ))}
