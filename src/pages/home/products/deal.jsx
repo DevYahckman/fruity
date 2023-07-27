@@ -32,7 +32,7 @@ function Deal(props) {
   };
 
   return (
-    <div className="bg-lightBg p-3 md:p-16 grid h-auto lg:grid-cols-2 grid-cols-1">
+    <div className="bg-lightBg p-5 md:p-16 grid h-auto lg:grid-cols-2 grid-cols-1">
       <div
         className=" h-80 bg-no-repeat bg-cover"
         style={{ backgroundImage: `url(${bg})` }}
@@ -62,7 +62,7 @@ function Deal(props) {
           unde omnis iste natus error sit voluptatem accusant
         </p>
 
-        <div className="mb-8">
+        <div className="mb-2 lg:mb-8">
           <Countdown date={targetDate} renderer={renderer} />
         </div>
         <CommonButton link="#" name="Add to Cart" icon={<BsCartFill />} />

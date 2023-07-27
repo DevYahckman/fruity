@@ -24,7 +24,8 @@ module.exports = {
         lightWhite:'#f5f5f5',
         deepBlack:'#051922',
         lightColor: '#555',
-        lightBg:'#f5f5f5'
+        lightBg:'#f5f5f5',
+        aboutBg:'#007bff'
 
       },
     },
