@@ -27,7 +27,7 @@ function Produc(props) {
   ];
   return (
     <div>
-      <div className="p-10 pb-60">
+      <div className="p-5 md:p-10 pb-60">
         <p className="text-4xl font-bold text-center text-primary">
           Our <span className="text-deepBlack">Product</span>
         </p>
@@ -38,7 +38,8 @@ function Produc(props) {
 
         <div className="mt-10 mx-1 md:mx-4 lg:mx-8 grid gap-12 grid-cols-1 lg:grid-cols-3 md:grid-cols-1">
           {products.map((item, i) => (
-            <div className=" p-12 h-30 rounded-xl items-center  shadow-2xl hover:shadow-none cursor-pointer">
+            <div className="p-6 md:p-12 h-30 
+            rounded-xl items-center  shadow-2xl hover:shadow-none cursor-pointer">
               <div className="flex place-items-center justify-center">
                 <img src={item.img} width={250} alt="" />
               </div>
