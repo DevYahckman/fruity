@@ -48,7 +48,7 @@ function Deal(props) {
         {/* <TailwindButton link='#' name='Lets go' icon={<BsCartFill/>} /> */}
       </div>
       <div>
-        <p className="text-5xl font-bold text-deepBlack">
+        <p className="text-4xl md:text-5xl font-bold text-deepBlack">
           {" "}
           <span className="text-primary">Deal</span> of the month
         </p>
@@ -67,6 +67,8 @@ function Deal(props) {
         </div>
         <CommonButton link="#" name="Add to Cart" icon={<BsCartFill />} />
       </div>
+
+    
     </div>
   );
 }
