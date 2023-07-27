@@ -10,7 +10,7 @@ function Deal(props) {
 
   const renderer = ({ days, hours, minutes, seconds }) => {
     return (
-      <div className="  md:flex text-center space-x-2 md:space-x-6">
+      <div className=" grid grid-cols-2 md:flex text-center space-x-2 md:space-x-6">
         <p className=" font-bold md:px-10 md:py-3 px-4 py-2 text-xl border-1 border-solid border-primary text-primary">
           {days} <br />
           <span className="text-deepBlack">Days</span>
