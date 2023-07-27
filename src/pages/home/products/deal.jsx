@@ -2,7 +2,8 @@ import React from "react";
 import bg from "../../../assets/a.jpg";
 import Countdown from "react-countdown";
 import { Link } from "react-router-dom";
-import {BsCartFill} from 'react-icons/bs'
+import { BsCartFill } from "react-icons/bs";
+import { CommonButton } from "./../../../utils/buttons";
 
 function Deal(props) {
   const targetDate = new Date("2023-12-31T00:00:00");
@@ -43,6 +44,8 @@ function Deal(props) {
         >
           30% <br /> off per kg{" "}
         </p>
+
+        {/* <TailwindButton link='#' name='Lets go' icon={<BsCartFill/>} /> */}
       </div>
       <div>
         <p className="text-5xl font-bold text-deepBlack">
@@ -62,13 +65,7 @@ function Deal(props) {
         <div className="mb-8">
           <Countdown date={targetDate} renderer={renderer} />
         </div>
-
-        <Link
-          to="#"
-          className="hover:bg-black  hover:text-primary font-semibold mr-10 rounded-full bg-primary text-white py-3 px-7 no-underline "
-        >
-          <BsCartFill /> Add to cart
-        </Link>
+        <CommonButton link="#" name="Add to Cart" icon={<BsCartFill />} />
       </div>
     </div>
   );
