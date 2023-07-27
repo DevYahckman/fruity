@@ -55,7 +55,6 @@ function AboutLand(props) {
         </p>
 
         <CommonButton name="Shop now!!!" link="#" />
-
       </div>
     </div>
   );
