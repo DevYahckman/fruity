@@ -26,7 +26,9 @@ module.exports = {
         lightColor: '#555',
         lightBg:'#f5f5f5',
         aboutBg:'#007bff',
-        formBg:'#012738'
+        formBg:'#012738',
+        lightWhite2:'#fff'
+
 
       },
     },
