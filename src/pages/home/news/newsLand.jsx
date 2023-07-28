@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import img from "../../../assets/news-bg-1.jpg";
 import img2 from "../../../assets/news-bg-2.jpg";
 import img3 from "../../../assets/news-bg-3.jpg";
@@ -7,9 +7,24 @@ import { BsCalendar2DateFill } from "react-icons/bs";
 import { BiChevronRight } from "react-icons/bi";
 import { Link } from "react-router-dom";
 import { CommonButton } from "../../../utils/buttons";
+import config from '../../../config.json'
+import http from '../../../services/httpService'
 
 function NewsLand(props) {
-  const data = [
+  const [news,setNews] = useState([])
+
+useEffect(()=>{
+  async function getData(){
+    const {data} = await http.get(`${config.apiUrl}/news?_limited=3`,)
+   setNews(data);
+ console.log(data);
+
+  }
+
+  getData()
+},[])
+
+  const data1 = [
     {
       img: img,
       title: " A man's worth has its season, like tomato.",
@@ -40,10 +55,10 @@ function NewsLand(props) {
       </p>
 
       <div className=" md:p-10 gap-4 grid grid-cols-1 lg:grid-cols-3 ">
-        {data.map((item, i) => (
+        {news.slice(0,3).map((item, i) => (
           <div className=" cursor-pointer hover:shadow-none shadow-2xl my-14  ">
             <img
-              src={item.img}
+              src={item.image}
               className="w-full rounded-r-lg rounded-t-lg"
               alt=""
             />
@@ -61,7 +76,7 @@ function NewsLand(props) {
                 </span>
               </p>
 
-              <p className=" text-lightColor text-base">{item.news}</p>
+              <p className=" text-lightColor text-base">{item.new}</p>
 
               <p>
                 <Link
