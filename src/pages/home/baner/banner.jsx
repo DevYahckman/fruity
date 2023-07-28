@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { FaShippingFast } from "react-icons/fa";
 import {FiPhoneCall} from 'react-icons/fi'
 import {TfiReload} from 'react-icons/tfi'
+import AppHeader from "../../../components/appHeader/header";
 
 
 function Banner(props) {
@@ -33,6 +34,7 @@ function Banner(props) {
   return (
     <div>
       <div className={styles.banner}>
+        < AppHeader/>
         <div className=" sm:pt-20 md:pt-40 pt-40 text-center ">
           <p className="text-primary text-xl tracking-wider font-bold font-sans">
             FRESH & ORGANIC

@@ -2,7 +2,7 @@ import React from "react";
 import { BsSendFill } from "react-icons/bs";
 import { FaFacebookF, FaTwitter, FaLinkedin } from "react-icons/fa";
 import { LiaExternalLinkAltSolid } from "react-icons/lia";
-import {TfiWorld} from 'react-icons/tfi'
+import { TfiWorld } from "react-icons/tfi";
 import { Link } from "react-router-dom";
 
 function Footer(props) {
@@ -95,11 +95,27 @@ function Footer(props) {
           </div>
         </div>
       </div>
-      <div style={{borderTop: '2px solid white'}} className="text-lightWhite2 flex justify-center  space-x-5 p-5 mt-5  md:mt-10">
-        <Link to='#' className="text-lightWhite2"> < FaFacebookF/> </Link>
-        <Link to='#' className="text-lightWhite2"> < FaTwitter/> </Link>
-        <Link to='#' className="text-lightWhite2"> < FaLinkedin/> </Link>
-        <Link to='#' className="text-lightWhite2"> < TfiWorld/> </Link>
+      <div
+        style={{ borderTop: "2px solid white" }}
+        className="text-lightWhite2 flex justify-center 
+         space-x-5 p-5 mt-5  md:mt-10"
+      >
+        <Link to="#" className="text-lightWhite2">
+          {" "}
+          <FaFacebookF />{" "}
+        </Link>
+        <Link to="#" className="text-lightWhite2">
+          {" "}
+          <FaTwitter />{" "}
+        </Link>
+        <Link to="#" className="text-lightWhite2">
+          {" "}
+          <FaLinkedin />{" "}
+        </Link>
+        <Link to="#" className="text-lightWhite2">
+          {" "}
+          <TfiWorld />{" "}
+        </Link>
       </div>
     </div>
   );
