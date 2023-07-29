@@ -4,3 +4,11 @@
     font-family: 'Lobster', cursive;
 }
 
+.header{
+   transition: all 2s;
+}
+
+.link{
+    @extend .header;
+    font-size: 20000px;
+}
