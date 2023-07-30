@@ -4,6 +4,7 @@ import styles from "./header.module.scss";
 import { BiSearchAlt2 } from "react-icons/bi";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { MdOutlineCancel } from "react-icons/md";
+import {FaShoppingCart} from 'react-icons/fa'
 // import { OffCanvas, OffCanvasMenu, OffCanvasBody } from "react-offcanvas";
 
 function AppHeader(props) {
@@ -33,12 +34,12 @@ function AppHeader(props) {
   const navData = [
     {
       name: "Home",
-      link: "#",
+      link: "/",
       icon: "",
     },
     {
       name: "About",
-      link: "#",
+      link: "/about",
       icon: "",
     },
     {
@@ -48,6 +49,11 @@ function AppHeader(props) {
     },
     {
       name: "Contact",
+      link: "#",
+      icon: "",
+    },
+    {
+      name: "Shop",
       link: "#",
       icon: "",
     },
@@ -86,14 +92,20 @@ function AppHeader(props) {
         </div>
         <div className="space-x-4 lg:mt-0 mt-3">
           <Link
-            className="text-white text-3xl font-bold
-           transition-all duration-700 ease-in"
+            className="text-white text-sm font-bold
+           transition-all duration-700 ease-in hidden lg:inline"
           >
-            <BiSearchAlt2 />
+            <FaShoppingCart />
+          </Link>
+          <Link
+            className="text-white text-sm font-bold
+           transition-all duration-700 ease-in "
+          >
+            <BiSearchAlt2  />
           </Link>
           <Link
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="text-deepBlack text-3xl font-bold bg-primary pt-2 px-2.5 py-0"
+            className= "text-xl lg:hidden text-deepBlack font-bold bg-primary pt-2 px-2.5 py-0"
           >
             {isMenuOpen ? <GiHamburgerMenu /> : <MdOutlineCancel />}
           </Link>
@@ -114,6 +126,7 @@ function AppHeader(props) {
               className="  list-none mb-3 border-b-2  text-xl text-center"
             >
               <Link
+              onClick={()=>setIsMenuOpen(false)}
                 to={item.link}
                 className="no-underline text-grey
             hover:text-gray-400 duration-500  text-white"

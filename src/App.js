@@ -3,14 +3,14 @@ import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import Home from "./pages/home/home";
 import Footer from "./components/footer/footer";
-import AppHeader from "./components/appHeader/header";
+import About from "./pages/about/about";
 
 function App() {
   return (
     <div classNameName="">
-
-      {/* < AppHeader/> */}
+    
       <Routes>
+        <Route path="/about" element={< About />} />
         <Route path="/" element={<Home />} />
       </Routes>
       <Footer />
