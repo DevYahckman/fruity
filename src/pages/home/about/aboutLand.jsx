@@ -1,7 +1,8 @@
 import React from "react";
 import bg from "../../../assets/abt.jpg";
-import bg1 from "../../../assets/1.jpg";
+// import bg1 from "../../../assets/1.jpg";
 import { CommonButton } from "../../../utils/buttons";
+import JulySales from "./julySales";
 
 function AboutLand(props) {
   return (
@@ -40,22 +41,7 @@ function AboutLand(props) {
         </div>
       </div>
 
-      <div
-        className="mt-10 mb-10 
-        bg-cover h-80 md:h-fit p-5 md:p-10  bg-no-repeat"
-        style={{ backgroundImage: `url(${bg1})` }}
-      >
-        <p className="text-4xl md:text-6xl font-bold text-deepBlack">
-          July sale is on! <br />
-          with big <span className="text-primary">Discount...</span>
-        </p>
-
-        <p className="text-4xl md:text-6xl font-bold text-deepBlack">
-          sales upto <span className="text-primary">50%</span> off
-        </p>
-
-        <CommonButton name="Shop now!!!" link="#" />
-      </div>
+      <JulySales />
     </div>
   );
 }
