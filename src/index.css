@@ -7,6 +7,15 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
+:root {
+	--hue: 223;
+	--bg: hsl(var(--hue),10%,90%);
+	--fg: hsl(var(--hue),10%,10%);
+	--primary: hsl(var(--hue),90%,55%);
+	--trans-dur: 0.3s;
+	/* font-size: calc(16px + (20 - 16) * (100vw - 320px) / (1280 - 320)); */
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',

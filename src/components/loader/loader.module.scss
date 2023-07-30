@@ -1,0 +1,86 @@
+.loader {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  // background-color: #fc614282;
+  background: rgba(255, 255, 255, 0.22);
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+
+//   
+.backdrop {
+	height: 100vh;
+	width: 100vw;
+	top: 0;
+	left: 0;
+	position: absolute;
+	// display: grid;
+	// align-items: center;
+	// justify-items: center;
+	// background-color: rgba(0, 0, 0, 0.85);
+	padding: 3rem;
+	z-index: 50000;
+
+}
+}
+
+.preLoader {
+  width: 8vmax;
+  height: 8vmax;
+  border-right: 4px solid #000;
+  border-radius: 100%;
+  animation: spinRight 800ms linear infinite;
+
+  &:before,
+  &:after {
+    content: "";
+    width: 6vmax;
+    height: 6vmax;
+    display: block;
+    position: absolute;
+    top: calc(50% - 3vmax);
+    left: calc(50% - 3vmax);
+    border-left: 3px solid #f28123;
+    border-radius: 100%;
+    animation: spinLeft 800ms linear infinite;
+  }
+
+  &:after {
+    width: 4vmax;
+    height: 4vmax;
+    top: calc(50% - 2vmax);
+    left: calc(50% - 2vmax);
+    border: 0;
+    border-right: 2px solid #f28123;
+    animation: none;
+  }
+  &:after {
+    width: 4vmax;
+    height: 4vmax;
+    top: calc(50% - 2vmax);
+    left: calc(50% - 2vmax);
+    border: 0;
+    border-right: 2px solid #000;
+    animation: none;
+  }
+}
+
+@keyframes spinLeft {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(720deg);
+  }
+}
+
+@keyframes spinRight {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}

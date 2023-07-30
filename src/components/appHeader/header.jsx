@@ -5,6 +5,7 @@ import { BiSearchAlt2 } from "react-icons/bi";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { MdOutlineCancel } from "react-icons/md";
 import {FaShoppingCart} from 'react-icons/fa'
+// import './header.module.scss'
 // import { OffCanvas, OffCanvasMenu, OffCanvasBody } from "react-offcanvas";
 
 function AppHeader(props) {
