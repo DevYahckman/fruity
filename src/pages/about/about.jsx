@@ -4,6 +4,7 @@ import Loader from "../../components/loader/loader";
 import { FaShippingFast } from "react-icons/fa";
 import bg from "../../assets/feature-bg.jpg";
 import JulySales from "../home/about/julySales";
+import OurTeam from './OurTeam';
 
 function About(props) {
   const [isLoading, setIsLoading] = useState(true);
@@ -95,6 +96,10 @@ function About(props) {
 
         <div>
           <JulySales />
+        </div>
+
+        <div>
+          <OurTeam/>
         </div>
     </div>
   );
