@@ -45,7 +45,7 @@ function AppHeader(props) {
     },
     {
       name: "News",
-      link: "#",
+      link: "/news",
       icon: "",
     },
     {
