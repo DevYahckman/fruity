@@ -109,5 +109,41 @@ export  const data = [
       new: ` Vivamus lacus enim, pulvinar vel nulla sed, scelerisque rhoncus
             nisi. Praesent vitae mattis nunc, egestas viverra eros.`,
     },
+    {
+      image: img,
+      title: "16 A man's worth has its season, like tomato.",
+      new: ` Vivamus lacus enim, pulvinar vel nulla sed, scelerisque rhoncus
+            nisi. Praesent vitae mattis nunc, egestas viverra eros.`,
+    },
+    {
+      image: img,
+      title: "17 A man's worth has its season, like tomato.",
+      new: ` Vivamus lacus enim, pulvinar vel nulla sed, scelerisque rhoncus
+            nisi. Praesent vitae mattis nunc, egestas viverra eros.`,
+    },
+    {
+      image: img,
+      title: "18 A man's worth has its season, like tomato.",
+      new: ` Vivamus lacus enim, pulvinar vel nulla sed, scelerisque rhoncus
+            nisi. Praesent vitae mattis nunc, egestas viverra eros.`,
+    },
+    {
+      image: img,
+      title: "16 A man's worth has its season, like tomato.",
+      new: ` Vivamus lacus enim, pulvinar vel nulla sed, scelerisque rhoncus
+            nisi. Praesent vitae mattis nunc, egestas viverra eros.`,
+    },
+    {
+      image: img,
+      title: "17 A man's worth has its season, like tomato.",
+      new: ` Vivamus lacus enim, pulvinar vel nulla sed, scelerisque rhoncus
+            nisi. Praesent vitae mattis nunc, egestas viverra eros.`,
+    },
+    {
+      image: img,
+      title: "18 A man's worth has its season, like tomato.",
+      new: ` Vivamus lacus enim, pulvinar vel nulla sed, scelerisque rhoncus
+            nisi. Praesent vitae mattis nunc, egestas viverra eros.`,
+    },
   ];
 

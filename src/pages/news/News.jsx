@@ -18,7 +18,7 @@ function News(props) {
         <Banner title="ORGANIC INFORMATION" pageName="NEWS ARTICLE" />
       </div>
 
-      <NewsCard data={currentPost} />
+      <NewsCard data={currentPost} link={'/singleNews'}/>
       <div className="text-center -mt-16 my-10 space-x-3 ">
         <Pagination
           totalPost={data.length}

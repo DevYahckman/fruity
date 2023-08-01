@@ -8,6 +8,7 @@ import Loader from "./components/loader/loader";
 import { useEffect, useState } from "react";
 import React from "react";
 import News from "./pages/news/News";
+import SingleNews from "./pages/singleNews/SingleNews";
 function App() {
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
@@ -20,6 +21,7 @@ function App() {
     <div classNameName="">
       {isLoading && <Loader />}
       <Routes>
+        <Route path="/singleNews" element={< SingleNews />} />
         <Route path="/news" element={< News />} />
         <Route path="/about" element={<About />} />
         <Route path="/" element={<Home />} />

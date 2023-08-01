@@ -7,11 +7,11 @@ import { Link } from "react-router-dom";
 
 
 
-function NewsCard({data}) {
+function NewsCard({data, link}) {
   return (
-    <div className="p-5 lg:p-11">
+    <div className=" p-5 lg:p-11">
       
-      <div className=" md:p-10 gap-4 grid grid-cols-1 lg:grid-cols-3 ">
+      <div className="transition-all duration-300 ease-in delay-100 md:p-10 gap-4 grid grid-cols-1 lg:grid-cols-3 ">
         {data.map((item, i) => (
           <div className=" cursor-pointer hover:shadow-none shadow-2xl my-14  ">
             <img
@@ -37,7 +37,7 @@ function NewsCard({data}) {
 
               <p>
                 <Link
-                  to="#"
+                  to={link}
                   className=" hover:text-primary  font-semibold no-underline text-sm text-lightColor"
                 >
                   {" "}

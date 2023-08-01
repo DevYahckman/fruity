@@ -65,7 +65,7 @@ function AppHeader(props) {
     },
   ];
   return (
-    <div className={`${styles.header} ${inView?'bg-deepBlack':''} lg:fixed w-full`}>
+    <div className={`${styles.header} ${inView?'bg-deepBlack':''} fixed w-full`}>
       <div className="  flex justify-between  p-4 lg:p-8 mx-4 md:mx-16">
         <div className={styles.logo}>
           <Link
