@@ -5,6 +5,7 @@ import { FaFacebook } from "react-icons/fa";
 export function CommonButton({ link, name, icon }) {
   return (
     <Link
+    
       to={link}
       className="hover:bg-black hover:text-primary font-semibold mr-10 rounded-full bg-primary text-white py-3 px-7 no-underline "
     >

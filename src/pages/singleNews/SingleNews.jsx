@@ -4,6 +4,7 @@ import bg from "../../assets/news-bg-3.jpg";
 import { FaUser } from "react-icons/fa";
 import { BsCalendar2DateFill } from "react-icons/bs";
 import Comments from "./comments";
+import CommentForm from "./commentForm";
 
 function SingleNews(props) {
   return (
@@ -68,11 +69,12 @@ function SingleNews(props) {
               quidem recusandae expedita dicta cum eum. Quae laborum repellat a
               ut, voluptatum ipsa eum. Culpa fugiat minus laborum quia nam!
             </p>
+            <Comments />
+            <CommentForm />
           </div>
 
           <div className="hidden lg:inline-block">advertize here</div>
         </div>
-        <Comments />
       </div>
     </div>
   );
