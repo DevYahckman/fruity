@@ -17,7 +17,6 @@ function SingleNews(props) {
   const params =useParams()
   const id = params.id
 
-  // console.log(id);
 
   useEffect(()=>{
     async function getData(){

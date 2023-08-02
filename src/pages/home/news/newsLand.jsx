@@ -11,42 +11,42 @@ import config from "../../../config.json";
 import http from "../../../services/httpService";
 
 function NewsLand(props) {
-  // const [news, setNews] = useState([]);
+  const [news, setNews] = useState([]);
 
-  // useEffect(() => {
-  //   async function getData() {
-  //     try {
-  //       const { data } = await http.get(`${config.apiUrl}/news?_limited=3`);
-  //       setNews(data);
-  //     } catch (error) {
-  //       console.log(error);
-  //     }
+  useEffect(() => {
+    async function getData() {
+      try {
+        const { data } = await http.get(`${config.apiUrl}/news?_limited=3`);
+        setNews(data);
+      } catch (error) {
+        console.log(error);
+      }
 
-  //   }
+    }
 
-  //   getData();
-  // }, []);
+    getData();
+  }, []);
 
-  const data = [
-    {
-      image: img,
-      title: " A man's worth has its season, like tomato.",
-      new: ` Vivamus lacus enim, pulvinar vel nulla sed, scelerisque rhoncus
-            nisi. Praesent vitae mattis nunc, egestas viverra eros.`,
-    },
-    {
-      image: img2,
-      title: " A man's worth has its season, like tomato.",
-      new: ` Vivamus lacus enim, pulvinar vel nulla sed, scelerisque rhoncus
-            nisi. Praesent vitae mattis nunc, egestas viverra eros.`,
-    },
-    {
-      image: img3,
-      title: " A man's worth has its season, like tomato.",
-      new: ` Vivamus lacus enim, pulvinar vel nulla sed, scelerisque rhoncus
-            nisi. Praesent vitae mattis nunc, egestas viverra eros.`,
-    },
-  ];
+  // const data = [
+  //   {
+  //     image: img,
+  //     title: " A man's worth has its season, like tomato.",
+  //     new: ` Vivamus lacus enim, pulvinar vel nulla sed, scelerisque rhoncus
+  //           nisi. Praesent vitae mattis nunc, egestas viverra eros.`,
+  //   },
+  //   {
+  //     image: img2,
+  //     title: " A man's worth has its season, like tomato.",
+  //     new: ` Vivamus lacus enim, pulvinar vel nulla sed, scelerisque rhoncus
+  //           nisi. Praesent vitae mattis nunc, egestas viverra eros.`,
+  //   },
+  //   {
+  //     image: img3,
+  //     title: " A man's worth has its season, like tomato.",
+  //     new: ` Vivamus lacus enim, pulvinar vel nulla sed, scelerisque rhoncus
+  //           nisi. Praesent vitae mattis nunc, egestas viverra eros.`,
+  //   },
+  // ];
   return (
     <div className="p-5 lg:p-11">
       <p className="sm:text-2xl  md:text-4xl text-center font-bold text-deepBlack">
@@ -58,7 +58,7 @@ function NewsLand(props) {
       </p>
 
       <div className=" md:p-10 gap-4 grid grid-cols-1 lg:grid-cols-3 ">
-        {data.slice(0, 3).map((item, i) => (
+        {news.slice(0, 3).map((item, i) => (
           <div className=" cursor-pointer hover:shadow-none shadow-2xl my-14  ">
             <img
               src={item.image}
@@ -83,7 +83,7 @@ function NewsLand(props) {
 
               <p>
                 <Link
-                  to="#"
+                  to={`/news/${item._id}`}
                   className=" hover:text-primary  font-semibold no-underline text-sm text-lightColor"
                 >
                   {" "}
@@ -95,7 +95,7 @@ function NewsLand(props) {
         ))}
       </div>
       <div className="mt-20 md:mt-0 flex justify-center">
-        <CommonButton name="more news" />
+        <CommonButton name="more news" link={'/news'} />
       </div>
     </div>
   );
