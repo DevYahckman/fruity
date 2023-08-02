@@ -21,7 +21,7 @@ function App() {
     <div classNameName="">
       {isLoading && <Loader />}
       <Routes>
-        <Route path="/singleNews" element={< SingleNews />} />
+        <Route path="/news/:id" element={< SingleNews />} />
         <Route path="/news" element={< News />} />
         <Route path="/about" element={<About />} />
         <Route path="/" element={<Home />} />

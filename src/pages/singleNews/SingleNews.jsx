@@ -1,12 +1,33 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Banner from "../../components/banner/banner";
 import bg from "../../assets/news-bg-3.jpg";
 import { FaUser } from "react-icons/fa";
 import { BsCalendar2DateFill } from "react-icons/bs";
 import Comments from "./comments";
 import CommentForm from "./commentForm";
+import { useParams } from "react-router-dom";
+import http from "../../services/httpService";
+import config from '../../config.json'
 
 function SingleNews(props) {
+ 
+
+
+  const [singleNews, setSingleNews] =useState({})
+  const params =useParams()
+  const id = params.id
+
+  // console.log(id);
+
+  useEffect(()=>{
+    async function getData(){
+      const res = await http.get(`${config.apiUrl}/news/${id}`)
+
+     setSingleNews(res.data);
+    }
+    getData()
+  },[])
+
   return (
     <div>
       <div>
@@ -22,7 +43,7 @@ function SingleNews(props) {
               // style={{ backgroundImage: `url(${bg})` }}
               className="w-full  bg-no-repeat bg-cover bg-center rounded-xl"
             >
-              <img src={bg} className=" w-full h-full rounded-xl" alt="" />
+              <img src={singleNews.image} className=" w-full h-full rounded-xl" alt="" />
             </div>
             <p className="text-sm text-lightColor  ">
               <span className="mr-3">
@@ -40,35 +61,9 @@ function SingleNews(props) {
               Pomegranate can prevent heart disease
             </p>
             <p className="text-base font-light ">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint
-              soluta, similique quidem fuga vel voluptates amet doloremque
-              corrupti. Perferendis totam voluptates eius error fuga cupiditate
-              dolorum? Adipisci mollitia quod labore aut natus nobis. Rerum
-              perferendis, nobis hic adipisci vel inventore facilis rem illo,
-              tenetur ipsa voluptate dolorem, cupiditate temporibus laudantium
-              quidem recusandae expedita dicta cum eum. Quae laborum repellat a
-              ut, voluptatum ipsa eum. Culpa fugiat minus laborum quia nam!
+              {singleNews.new}
             </p>
-            <p className="text-base font-light ">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint
-              soluta, similique quidem fuga vel voluptates amet doloremque
-              corrupti. Perferendis totam voluptates eius error fuga cupiditate
-              dolorum? Adipisci mollitia quod labore aut natus nobis. Rerum
-              perferendis, nobis hic adipisci vel inventore facilis rem illo,
-              tenetur ipsa voluptate dolorem, cupiditate temporibus laudantium
-              quidem recusandae expedita dicta cum eum. Quae laborum repellat a
-              ut, voluptatum ipsa eum. Culpa fugiat minus laborum quia nam!
-            </p>
-            <p className="text-base font-light ">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint
-              soluta, similique quidem fuga vel voluptates amet doloremque
-              corrupti. Perferendis totam voluptates eius error fuga cupiditate
-              dolorum? Adipisci mollitia quod labore aut natus nobis. Rerum
-              perferendis, nobis hic adipisci vel inventore facilis rem illo,
-              tenetur ipsa voluptate dolorem, cupiditate temporibus laudantium
-              quidem recusandae expedita dicta cum eum. Quae laborum repellat a
-              ut, voluptatum ipsa eum. Culpa fugiat minus laborum quia nam!
-            </p>
+           
             <Comments />
             <CommentForm />
           </div>

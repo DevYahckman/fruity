@@ -99,7 +99,7 @@ function CommentForm(props) {
 
           <button
             type="submit"
-            className="hover:bg-black mt-5 hover:text-primary font-semibold mr-10 rounded-full bg-primary text-white py-3 px-7 no-underline "
+            className="hover:bg-black mt-5 hover:text-primary font-semibold mr-10 rounded-full bg-primary text-white py-3 px-7 no-underline border-none"
           >
             submit
           </button>

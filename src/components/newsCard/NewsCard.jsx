@@ -33,11 +33,12 @@ function NewsCard({data, link}) {
                 </span>
               </p>
 
-              <p className=" text-lightColor text-base">{item.new}</p>
+              <p className=" text-lightColor text-base">{item.new.substring(0, 100) + "...."}</p>
 
               <p>
                 <Link
-                  to={link}
+                // blogs/${item._id}`
+                  to={`/news/${item._id}`}
                   className=" hover:text-primary  font-semibold no-underline text-sm text-lightColor"
                 >
                   {" "}
