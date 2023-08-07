@@ -1,7 +1,4 @@
 import React, { useEffect, useState } from "react";
-import img from "../../../assets/news-bg-1.jpg";
-import img2 from "../../../assets/news-bg-2.jpg";
-import img3 from "../../../assets/news-bg-3.jpg";
 import { FaUser } from "react-icons/fa";
 import { BsCalendar2DateFill } from "react-icons/bs";
 import { BiChevronRight } from "react-icons/bi";
@@ -21,32 +18,11 @@ function NewsLand(props) {
       } catch (error) {
         console.log(error);
       }
-
     }
 
     getData();
   }, []);
 
-  // const data = [
-  //   {
-  //     image: img,
-  //     title: " A man's worth has its season, like tomato.",
-  //     new: ` Vivamus lacus enim, pulvinar vel nulla sed, scelerisque rhoncus
-  //           nisi. Praesent vitae mattis nunc, egestas viverra eros.`,
-  //   },
-  //   {
-  //     image: img2,
-  //     title: " A man's worth has its season, like tomato.",
-  //     new: ` Vivamus lacus enim, pulvinar vel nulla sed, scelerisque rhoncus
-  //           nisi. Praesent vitae mattis nunc, egestas viverra eros.`,
-  //   },
-  //   {
-  //     image: img3,
-  //     title: " A man's worth has its season, like tomato.",
-  //     new: ` Vivamus lacus enim, pulvinar vel nulla sed, scelerisque rhoncus
-  //           nisi. Praesent vitae mattis nunc, egestas viverra eros.`,
-  //   },
-  // ];
   return (
     <div className="p-5 lg:p-11">
       <p className="sm:text-2xl  md:text-4xl text-center font-bold text-deepBlack">
@@ -95,7 +71,7 @@ function NewsLand(props) {
         ))}
       </div>
       <div className="mt-20 md:mt-0 flex justify-center">
-        <CommonButton name="more news" link={'/news'} />
+        <CommonButton name="more news" link={"/news"} />
       </div>
     </div>
   );

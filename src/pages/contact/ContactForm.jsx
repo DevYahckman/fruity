@@ -3,7 +3,6 @@ import React from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 
-
 function CommentForm(props) {
   const validateComment = () => {
     return Yup.object({
@@ -35,7 +34,7 @@ function CommentForm(props) {
 
       <div>
         <form action="" onSubmit={formik.handleSubmit}>
-          <div className="grid grid-cols-2 gap-8 w-full">
+          <div className=" lg:grid grid-cols-2 gap-8 w-full">
             <div>
               <input
                 className={` h-7 
@@ -45,7 +44,7 @@ function CommentForm(props) {
         focus:shadow-outline`}
                 name="name"
                 type="text"
-                placeholder={"placeholder"}
+                placeholder={"Name"}
                 value={formik.values.name}
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
@@ -65,7 +64,7 @@ function CommentForm(props) {
         focus:shadow-outline`}
                 name="email"
                 type="text"
-                placeholder={"placeholder"}
+                placeholder={"Email"}
                 value={formik.values.email}
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
@@ -85,7 +84,7 @@ function CommentForm(props) {
         shadow appearance-none
          rounded-lg border focus:outline-none 
          focus:shadow-outline dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-              placeholder="Write your thoughts here..."
+              placeholder="Tell us something"
               value={formik.values.message}
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
@@ -94,8 +93,6 @@ function CommentForm(props) {
               <p className={"text-sm text-red-500"}>{formik.errors.message}</p>
             )}
           </div>
-
-          {/* <CommonButton name="Send" /> */}
 
           <button
             type="submit"

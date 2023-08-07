@@ -9,6 +9,7 @@ import { useEffect, useState } from "react";
 import React from "react";
 import News from "./pages/news/News";
 import SingleNews from "./pages/singleNews/SingleNews";
+import Contact from "./pages/contact/contact";
 function App() {
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
@@ -21,8 +22,9 @@ function App() {
     <div classNameName="">
       {isLoading && <Loader />}
       <Routes>
-        <Route path="/news/:id" element={< SingleNews />} />
-        <Route path="/news" element={< News />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/news/:id" element={<SingleNews />} />
+        <Route path="/news" element={<News />} />
         <Route path="/about" element={<About />} />
         <Route path="/" element={<Home />} />
       </Routes>

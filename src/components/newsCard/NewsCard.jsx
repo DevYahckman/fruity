@@ -1,16 +1,13 @@
-import React, { useEffect, useState } from "react";
-import img from '../../assets/news-bg-3.jpg'
+import React from "react";
+
 import { FaUser } from "react-icons/fa";
 import { BsCalendar2DateFill } from "react-icons/bs";
 import { BiChevronRight } from "react-icons/bi";
 import { Link } from "react-router-dom";
 
-
-
-function NewsCard({data, link}) {
+function NewsCard({ data, link }) {
   return (
     <div className=" p-5 lg:p-11">
-      
       <div className="transition-all duration-300 ease-in delay-100 md:p-10 gap-4 grid grid-cols-1 lg:grid-cols-3 ">
         {data.map((item, i) => (
           <div className=" cursor-pointer hover:shadow-none shadow-2xl my-14  ">
@@ -33,11 +30,13 @@ function NewsCard({data, link}) {
                 </span>
               </p>
 
-              <p className=" text-lightColor text-base">{item.new.substring(0, 100) + "...."}</p>
+              <p className=" text-lightColor text-base">
+                {item.new.substring(0, 100) + "...."}
+              </p>
 
               <p>
                 <Link
-                // blogs/${item._id}`
+                  // blogs/${item._id}`
                   to={`/news/${item._id}`}
                   className=" hover:text-primary  font-semibold no-underline text-sm text-lightColor"
                 >
@@ -49,7 +48,6 @@ function NewsCard({data, link}) {
           </div>
         ))}
       </div>
-     
     </div>
   );
 }
