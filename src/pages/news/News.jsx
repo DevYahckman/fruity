@@ -3,9 +3,10 @@ import React, { useEffect, useState } from "react";
 import NewsCard from "./../../components/newsCard/NewsCard";
 import Banner from "../../components/banner/banner";
 import { data } from "./testingData";
-import Pagination from "./pagination";
+// import Pagination from "./pagination";
 import config from "../../config.json";
 import http from "../../services/httpService";
+import Pagination from "../../utils/pagination";
 
 function News(props) {
   const [currentPage, setCurrentPage] = useState(2);

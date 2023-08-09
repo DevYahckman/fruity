@@ -54,7 +54,7 @@ function AppHeader(props) {
     },
     {
       name: "Shop",
-      link: "#",
+      link: "/shop",
       icon: "",
     },
     {
