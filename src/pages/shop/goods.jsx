@@ -5,9 +5,8 @@ import { BsCartFill } from "react-icons/bs";
 // import Deal from "./deal";
 import { CommonButton } from "../../utils/buttons";
 
-function Goods({products}) {
+function Goods({ products }) {
   const [selectedCategory, setSelectedCategory] = useState("All");
-  
 
   const button = [
     {
@@ -19,7 +18,7 @@ function Goods({products}) {
       link: "#",
     },
     {
-      btnName: "Berry ",
+      btnName: "Berry",
       link: "#",
     },
     {
@@ -34,7 +33,9 @@ function Goods({products}) {
           <Link
             onClick={() => setSelectedCategory(item.btnName)}
             to={item.link}
-            className={`${selectedCategory === item.btnName? 'bg-black':''} text-white border mr-7 border-solid no-underline bg-primary px-5 py-3 rounded-full text-xl font-bold`}
+            className={`${
+              selectedCategory === item.btnName ? "bg-black" : ""
+            } text-white border mr-7 border-solid no-underline bg-primary px-5 py-3 rounded-full text-xl font-bold`}
           >
             {" "}
             {item.btnName}{" "}
@@ -46,7 +47,7 @@ function Goods({products}) {
           {products
             .filter(
               (item) =>
-                selectedCategory === "All" || item.category === selectedCategory
+                selectedCategory == "All" || item.name == selectedCategory
             )
             .map((item, i) => (
               <div
@@ -54,7 +55,7 @@ function Goods({products}) {
             rounded-xl items-center  shadow-2xl hover:shadow-none cursor-pointer"
               >
                 <div className="flex place-items-center justify-center">
-                  <img src={item.img} width={250} alt="" />
+                  <img src={item.imagePath} width={250} alt="" />
                 </div>
                 <div className="mt-6 text-center">
                   <p className="text-deepBlack text-3xl font-bold">
@@ -64,7 +65,7 @@ function Goods({products}) {
                     Per Kg
                   </p>
                   <p className="text-deepBlack text-2xl font-bold">
-                    {item.Price}$
+                    {item.price}$
                   </p>
 
                   <CommonButton

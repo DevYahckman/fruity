@@ -11,6 +11,7 @@ import News from "./pages/news/News";
 import SingleNews from "./pages/singleNews/SingleNews";
 import Contact from "./pages/contact/contact";
 import Shop from "./pages/shop/shop";
+import Cart from "./pages/cart/cart";
 function App() {
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
@@ -23,6 +24,7 @@ function App() {
     <div classNameName="">
       {isLoading && <Loader />}
       <Routes>
+        <Route path="/cart" element={<Cart />} />
         <Route path="/shop" element={<Shop />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/news/:id" element={<SingleNews />} />
