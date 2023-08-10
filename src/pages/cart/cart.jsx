@@ -34,7 +34,6 @@ function Cart(props) {
   useEffect(() => {
     async function getData() {
       const { data } = await http.get(`${config.apiUrl}/fruits/${id}`);
-      console.log(data);
       setProduct(data);
     }
     getData();
@@ -48,7 +47,7 @@ function Cart(props) {
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2  p-5 lg:p-20 h-auto">
         <div className="">
-          <img src={img} className="w-52 md:w-72" alt="" />
+          <img src={product.imagePath} className="w-52 md:w-72" alt="" />
           <form onSubmit={formik.handleSubmit}>
             <div>
               <input
