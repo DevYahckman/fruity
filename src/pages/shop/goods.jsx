@@ -69,7 +69,7 @@ function Goods({ products }) {
                   </p>
 
                   <CommonButton
-                    link="#"
+                    link={`/shop/${item._id}`} 
                     name="Add to Cart"
                     icon={<BsCartFill />}
                   />

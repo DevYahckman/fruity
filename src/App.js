@@ -24,7 +24,7 @@ function App() {
     <div classNameName="">
       {isLoading && <Loader />}
       <Routes>
-        <Route path="/cart" element={<Cart />} />
+        <Route path="/shop/:id" element={<Cart />} />
         <Route path="/shop" element={<Shop />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/news/:id" element={<SingleNews />} />

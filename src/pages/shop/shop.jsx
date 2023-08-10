@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Banner from "../../components/banner/banner";
 import Goods from "./goods";
-import { products } from "./data";
+// import { products } from "./data";
 import Pagination from './../../utils/pagination';
 import http from '../../services/httpService'
 import config from '../../config.json'

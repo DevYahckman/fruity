@@ -1,12 +1,19 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Banner from "../../components/banner/banner";
 import img from "../../assets/product-img-2.jpg";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { Payment } from "../../utils/payment";
 import { CommonButton } from "../../utils/buttons";
+import { useParams } from "react-router-dom";
+import config from "../../config.json";
+import http from "../../services/httpService";
 
 function Cart(props) {
+  const [product, setProduct] = useState({});
+  const params = useParams();
+  const id = params.id;
+
   const validateNumber = () => {
     return Yup.object({
       quantity: Yup.number().required("supply quantiyi").min(1),
@@ -15,12 +22,24 @@ function Cart(props) {
 
   const formik = useFormik({
     initialValues: {
-      quantity: "",
+      quantity: 1,
     },
     validationSchema: validateNumber(),
-  });
 
-  const handlePayment = Payment(formik.values.quantity * 7);
+    onSubmit: (values) => {
+      console.log(values);
+      formik.handleReset();
+    },
+  });
+  useEffect(() => {
+    async function getData() {
+      const { data } = await http.get(`${config.apiUrl}/fruits/${id}`);
+      console.log(data);
+      setProduct(data);
+    }
+    getData();
+  }, []);
+  const handlePayment = Payment(formik.values.quantity * product.price);
 
   return (
     <div>
