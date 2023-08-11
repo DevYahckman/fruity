@@ -35,7 +35,7 @@ function News(props) {
 
       {isFetching && "please wait..."}
       <NewsCard data={currentPost} />
-      <div className="text-center -mt-16 my-10 space-x-3 ">
+      <div className="text-center md:-mt-6 lg:-mt-16 my-10 space-x-3 ">
         <Pagination
           totalPost={data.length}
           setCurrentPage={setCurrentPage}
