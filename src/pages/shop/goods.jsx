@@ -5,8 +5,8 @@ import { BsCartFill } from "react-icons/bs";
 // import Deal from "./deal";
 import { CommonButton } from "../../utils/buttons";
 
-function Goods({ products }) {
-  const [selectedCategory, setSelectedCategory] = useState("All");
+function Goods({ products,setSelectedCategory,selectedCategory }) {
+  // const [selectedCategory, setSelectedCategory] = useState("All");
 
   const button = [
     {
@@ -35,7 +35,7 @@ function Goods({ products }) {
             to={item.link}
             className={`${
               selectedCategory === item.btnName ? "bg-black" : ""
-            } text-white border mr-7 border-solid no-underline bg-primary px-5 py-3 rounded-full text-xl font-bold`}
+            } text-white border mr-7 border-solid no-underline hover:bg-black bg-primary md:px-5 px-3 md:py-3 py-2 rounded-full md:text-xl text-base md:font-bold font-semibold`}
           >
             {" "}
             {item.btnName}{" "}
@@ -48,7 +48,8 @@ function Goods({ products }) {
             .filter(
               (item) =>
                 selectedCategory == "All" || item.name == selectedCategory
-            )
+             
+                )
             .map((item, i) => (
               <div
                 className="p-6 md:p-12 h-30 
