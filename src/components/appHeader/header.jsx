@@ -59,7 +59,7 @@ function AppHeader(props) {
     },
     {
       name: "SignUp",
-      link: "#",
+      link: "/register",
       icon: "",
     },
   ];

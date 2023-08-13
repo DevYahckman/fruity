@@ -1,9 +1,6 @@
 import React, { useEffect, useState } from "react";
-// import NewsCard from '../../components/newsCard/NewsCard';
 import NewsCard from "./../../components/newsCard/NewsCard";
 import Banner from "../../components/banner/banner";
-import { data } from "./testingData";
-// import Pagination from "./pagination";
 import config from "../../config.json";
 import http from "../../services/httpService";
 import Pagination from "../../utils/pagination";
@@ -37,7 +34,7 @@ function News(props) {
       <NewsCard data={currentPost} />
       <div className="text-center md:-mt-6 lg:-mt-16 my-10 space-x-3 ">
         <Pagination
-          totalPost={data.length}
+          totalPost={news.length}
           setCurrentPage={setCurrentPage}
           postPerPage={postPerPage}
           currentPage={currentPage}

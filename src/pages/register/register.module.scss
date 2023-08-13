@@ -1,0 +1,31 @@
+@mixin responsive($breakPoint) {
+    @if $breakPoint==tab {
+        @media screen and (max-width:768px){@content}
+    }
+    @if $breakPoint==phone {
+        @media screen and (max-width:430px){@content}
+    }
+  
+  }
+
+.input{
+    border: 1px solid #f5f5f5;
+
+    &:focus{
+   
+        border:1px solid #F28123 !important;
+        outline: none;
+    }
+}
+
+
+
+// .reg{
+//     padding: 5rem;
+// @include responsive(tab){
+//     padding: 4rem;
+// }
+// @include responsive(phone){
+//     padding: 2rem;
+// }
+// }
