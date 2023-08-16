@@ -65,7 +65,7 @@ function AppHeader({user}) {
       icon: "",
     }:{
       name: "Logout",
-      link: "/register",
+      link: "/logout",
     },
     !user?
       ''
