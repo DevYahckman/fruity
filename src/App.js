@@ -16,6 +16,7 @@ import Shop from "./pages/shop/shop";
 import Cart from "./pages/cart/cart";
 import Register from "./pages/register/Ragister";
 import Logout from "./pages/logout/Logout";
+import Login from "./pages/login/Login";
 function App() {
   const [currentUser, setCurrentUser] = useState(null);
 
@@ -44,6 +45,7 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/shop/:id" element={<Cart />} />
         <Route path="/logout" element={< Logout />} />
+        <Route path="/login" element={< Login />} />
         <Route path="/shop" element={<Shop />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/news/:id" element={<SingleNews />} />

@@ -68,10 +68,13 @@ function AppHeader({user}) {
       link: "/logout",
     },
     !user?
-      ''
+      {
+        name:'Login',
+        link:'/login'
+      }
     :{
       name: user.username || "me",
-      link: "/register",
+      link: "#",
     }
   ];
   return (

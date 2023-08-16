@@ -8,6 +8,7 @@ function Banner({ title, pageName }) {
 
   return (
     <div
+
       className={`${styles.header} w-full bg-red-600 from-slate-50`}
     >
       <div className="p-5 pt-36 text-center">
