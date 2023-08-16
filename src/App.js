@@ -6,14 +6,18 @@ import Footer from "./components/footer/footer";
 import About from "./pages/about/about";
 import Loader from "./components/loader/loader";
 import { useEffect, useState } from "react";
+import AppHeader from "./components/appHeader/header";
+import jwtDecode from "jwt-decode";
 import React from "react";
 import News from "./pages/news/News";
 import SingleNews from "./pages/singleNews/SingleNews";
 import Contact from "./pages/contact/contact";
 import Shop from "./pages/shop/shop";
 import Cart from "./pages/cart/cart";
-import Register from './pages/register/Ragister'
+import Register from "./pages/register/Ragister";
 function App() {
+  const [currentUser, setCurrentUser] = useState(null);
+
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
     setTimeout(() => {
@@ -21,11 +25,22 @@ function App() {
     }, 4000);
   });
 
+  useEffect(() => {
+    try {
+      const jwt = localStorage.getItem("token");
+      const user = jwtDecode(jwt);
+      setCurrentUser(user);
+      //  console.log(user);
+    } catch (ex) {}
+  });
+
   return (
     <div classNameName="">
-      {isLoading && <Loader />}
+      {/* {isLoading && <Loader />} */}
+      <AppHeader user={currentUser} />
+
       <Routes>
-        <Route path="/register" element={< Register />} />
+        <Route path="/register" element={<Register />} />
         <Route path="/shop/:id" element={<Cart />} />
         <Route path="/shop" element={<Shop />} />
         <Route path="/contact" element={<Contact />} />

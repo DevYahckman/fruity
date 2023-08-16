@@ -8,11 +8,11 @@ import { FaShoppingCart } from "react-icons/fa";
 // import './header.module.scss'
 // import { OffCanvas, OffCanvasMenu, OffCanvasBody } from "react-offcanvas";
 
-function AppHeader(props) {
+function AppHeader({user}) {
   const [active, setActive] = useState([0]);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [inView, setInview] = useState(false);
-
+// console.log(user);
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
@@ -57,11 +57,22 @@ function AppHeader(props) {
       link: "/shop",
       icon: "",
     },
+
+    !user?
     {
-      name: "SignUp",
+      name: "Register",
       link: "/register",
       icon: "",
+    }:{
+      name: "Logout",
+      link: "/register",
     },
+    !user?
+      ''
+    :{
+      name: user.username || "me",
+      link: "/register",
+    }
   ];
   return (
     <div
