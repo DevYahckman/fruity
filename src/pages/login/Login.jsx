@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 // import styles from './login.module.scss'
 import bg from "../../assets/news-bg-1.jpg";
 import { useFormik } from "formik";
@@ -6,6 +6,7 @@ import * as Yup from "yup";
 import http from "../../services/httpService";
 import config from "../../config.json";
 function Login(props) {
+    const [isLoading,setIsLoading] = useState(false)
   const validateUser = () => {
     user: Yup.object({
       email: Yup.string().required("Enter ur mail ").email(),
@@ -21,13 +22,16 @@ function Login(props) {
     validationSchema: validateUser(),
     onSubmit: async (values) => {
       try {
+        setIsLoading(true)
         const { data: jwt } = await http.post(`${config.apiUrl}/auth`, values);
         localStorage.setItem("token", jwt);
         window.location = "/";
         formik.handleReset();
         console.log(jwt);
+        setIsLoading(false)
       } catch (error) {
         formik.errors.email = error.response.data;
+        setIsLoading(false)
       }
     },
   });
@@ -72,11 +76,12 @@ function Login(props) {
             )}
           </div>
           <button
+          disabled={isLoading}
             type="submit"
-            className="bg-primary rounded text-white font-semibold border-none px-10 py-4"
+            className="bg-primary cursor-pointer hover:bg-deepBlack hover:text-white rounded text-white font-semibold border-none px-10 py-4"
           >
             {" "}
-            Login
+            {isLoading? 'Authenticating...':'Login'}
           </button>
         </form>
       </div>
