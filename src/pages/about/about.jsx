@@ -4,9 +4,10 @@ import Loader from "../../components/loader/loader";
 import { FaShippingFast } from "react-icons/fa";
 import bg from "../../assets/feature-bg.jpg";
 import JulySales from "../home/about/julySales";
-import OurTeam from './OurTeam';
+import OurTeam from "./OurTeam";
+import { CommonButton } from "../../utils/buttons";
 
-function About(props) {
+function About({ user }) {
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
     setTimeout(() => {
@@ -71,7 +72,7 @@ function About(props) {
         {isLoading && <Loader />}
         <Banner title="WE SALE FRESH FRUITS" pageName="ABOUT US" />
       </div>
-
+      {/* {user && <CommonButton name={"Add something"} />} */}
       <div className="lg:py-20 py-24 pl-5 lg:pl-20 grid lg:grid-cols-2">
         <div className="grid grid-cols-1 md:grid-cols-2 mr-6 lg:mr-1">
           {btmData.map((item, i) => (
@@ -94,13 +95,13 @@ function About(props) {
         ></div>
       </div>
 
-        <div>
-          <JulySales />
-        </div>
+      <div>
+        <JulySales />
+      </div>
 
-        <div>
-          <OurTeam/>
-        </div>
+      <div>
+        <OurTeam />
+      </div>
     </div>
   );
 }
