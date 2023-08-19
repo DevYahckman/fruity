@@ -17,6 +17,7 @@ import Cart from "./pages/cart/cart";
 import Register from "./pages/register/Ragister";
 import Logout from "./pages/logout/Logout";
 import Login from "./pages/login/Login";
+import PrivateRoutes from "./utils/PrivateRoutes";
 // import { render } from '@testing-library/react';
 
 function App() {
@@ -45,16 +46,22 @@ function App() {
 
       <Routes>
         <Route path="/register" element={<Register />} />
-        <Route
+
+        <Route element={<PrivateRoutes user={currentUser} />}>
+          <Route path="/shop/:id" element={<Cart />} />
+          <Route path="/shop" element={<Shop />} />
+        </Route>
+
+        {/* <Route
           path="/shop/:id"
           element={currentUser ? <Cart /> : <Navigate to="/login" />}
         />
-        <Route path="/logout" element={<Logout />} />
-        <Route path="/login" element={<Login />} />
         <Route
           path="/shop"
           element={currentUser ? <Shop /> : <Navigate to="/login" />}
-        />
+        /> */}
+        <Route path="/logout" element={<Logout />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/news/:id" element={<SingleNews />} />
         <Route path="/news" element={<News />} />
