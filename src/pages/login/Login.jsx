@@ -25,6 +25,7 @@ function Login(props) {
         setIsLoading(true);
         const { data: jwt } = await http.post(`${config.apiUrl}/auth`, values);
         localStorage.setItem("token", jwt);
+
         window.location = "/";
         formik.handleReset();
         console.log(jwt);

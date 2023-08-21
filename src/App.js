@@ -1,12 +1,11 @@
 import logo from "./logo.svg";
 import "./App.css";
-import { Routes, Route, Navigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Routes, Route } from "react-router-dom";
 import Home from "./pages/home/home";
 import Footer from "./components/footer/footer";
 import About from "./pages/about/about";
 import Loader from "./components/loader/loader";
-import { useEffect, useState } from "react";
-import AppHeader from "./components/appHeader/header";
 import jwtDecode from "jwt-decode";
 import React from "react";
 import News from "./pages/news/News";
@@ -18,7 +17,7 @@ import Register from "./pages/register/Ragister";
 import Logout from "./pages/logout/Logout";
 import Login from "./pages/login/Login";
 import PrivateRoutes from "./utils/PrivateRoutes";
-// import { render } from '@testing-library/react';
+import USerContext from "./context/UserContext";
 
 function App() {
   const [currentUser, setCurrentUser] = useState(null);
@@ -41,34 +40,26 @@ function App() {
 
   return (
     <div classNameName="">
-      {/* {isLoading && <Loader />} */}
-      <AppHeader user={currentUser} />
+      <USerContext.Provider value={currentUser}>
+        {/* {isLoading && <Loader />} */}
 
-      <Routes>
-        <Route path="/register" element={<Register />} />
+        <Routes>
+          <Route path="/register" element={<Register />} />
 
-        <Route element={<PrivateRoutes user={currentUser} />}>
-          <Route path="/shop/:id" element={<Cart />} />
-          <Route path="/shop" element={<Shop />} />
-        </Route>
-
-        {/* <Route
-          path="/shop/:id"
-          element={currentUser ? <Cart /> : <Navigate to="/login" />}
-        />
-        <Route
-          path="/shop"
-          element={currentUser ? <Shop /> : <Navigate to="/login" />}
-        /> */}
-        <Route path="/logout" element={<Logout />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/news/:id" element={<SingleNews />} />
-        <Route path="/news" element={<News />} />
-        <Route path="/about" element={<About user={currentUser} />} />
-        <Route path="/" element={<Home />} />
-      </Routes>
-      <Footer />
+          <Route element={<PrivateRoutes user={currentUser} />}>
+            <Route path="/shop/:id" element={<Cart />} />
+            <Route path="/shop" element={<Shop />} />
+            <Route path="/news/:id" element={<SingleNews />} />
+            <Route path="/news" element={<News />} />
+          </Route>
+          <Route path="/logout" element={<Logout />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/about" element={<About user={currentUser} />} />
+          <Route path="/" element={<Home />} />
+        </Routes>
+        <Footer />
+      </USerContext.Provider>
     </div>
   );
 }

@@ -1,18 +1,20 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import styles from "./header.module.scss";
 import { BiSearchAlt2 } from "react-icons/bi";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { MdOutlineCancel } from "react-icons/md";
 import { FaShoppingCart } from "react-icons/fa";
+import USerContext from "../../context/UserContext";
 // import './header.module.scss'
 // import { OffCanvas, OffCanvasMenu, OffCanvasBody } from "react-offcanvas";
 
-function AppHeader({user}) {
+function AppHeader({}) {
+  const user= useContext( USerContext )
   const [active, setActive] = useState([0]);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [inView, setInview] = useState(false);
-// console.log(user);
+
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;

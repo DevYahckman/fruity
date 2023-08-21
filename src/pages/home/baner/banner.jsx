@@ -34,7 +34,7 @@ function Banner(props) {
   return (
     <div>
       <div className={styles.banner}>
-        {/* < AppHeader/> */}
+        < AppHeader/>
         <div className=" sm:pt-20 md:pt-40 pt-40 text-center ">
           <p className="text-primary text-xl tracking-wider font-bold font-sans">
             FRESH & ORGANIC
