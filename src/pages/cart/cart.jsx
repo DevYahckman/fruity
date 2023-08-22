@@ -8,8 +8,12 @@ import { CommonButton } from "../../utils/buttons";
 import { useParams } from "react-router-dom";
 import config from "../../config.json";
 import http from "../../services/httpService";
+import { useContext } from "react";
+import USerContext from "../../context/UserContext";
 
 function Cart(props) {
+  const user=useContext(USerContext)
+  console.log(user);
   const [product, setProduct] = useState({});
   const params = useParams();
   const id = params.id;
@@ -38,7 +42,8 @@ function Cart(props) {
     }
     getData();
   }, []);
-  const handlePayment = Payment(formik.values.quantity * product.price);
+  // const handlePayment = Payment(formik.values.quantity * product.price);
+  const handlePayment = Payment(formik.values.quantity * product.price,user.email, user.phone, user.name);
 
   return (
     <div>

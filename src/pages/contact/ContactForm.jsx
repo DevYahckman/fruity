@@ -2,11 +2,14 @@ import React from "react";
 // import { InputForm, TextArea } from "../../utils/form";
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import http from '../../services/httpService'
+import config from '../../config.json'
 
 function CommentForm(props) {
   const validateComment = () => {
     return Yup.object({
       name: Yup.string().required("Enter ur name please"),
+      subject: Yup.string().required("Enter the subject"),
       email: Yup.string().required("Enter ur email please").email(),
       message: Yup.string().required("Tell us something"),
     });
@@ -15,22 +18,30 @@ function CommentForm(props) {
   const formik = useFormik({
     initialValues: {
       name: "",
+      subject:'',
       email: "",
       message: "",
     },
 
     validationSchema: validateComment(),
 
-    onSubmit: (values) => {
-      console.log(values);
-      formik.handleReset();
+    onSubmit: async(values) => {
+      try {
+        await http.post(`${config.apiUrl}/mail`,values)
+        alert('message sent')
+        console.log(values);
+        formik.handleReset();
+      } catch (error) {
+        console.log(error);
+      }
+  
     },
   });
 
   return (
     <div className="mt-12">
       <p className="text-4xl font-semibold">Leave a comment</p>
-      {/* < InputForm placeholder='Username' row='7'/> */}
+
 
       <div>
         <form action="" onSubmit={formik.handleSubmit}>
@@ -71,6 +82,28 @@ function CommentForm(props) {
               />
               {formik.touched.email && formik.errors.email && (
                 <p className={"text-sm text-red-500"}>{formik.errors.email}</p>
+              )}
+            </div>
+          </div>
+          <div className="mt-4 w-full">
+        
+            <div>
+              <input
+                className={` h-7 
+       
+        shadow appearance-none
+      border rounded w-full py-2 px-3
+        text-gray-700 leading-tight focus:outline-none 
+        focus:shadow-outline`}
+                name="subject"
+                type="text"
+                placeholder={"Subject"}
+                value={formik.values.subject}
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+              />
+              {formik.touched.subject && formik.errors.subject && (
+                <p className={"text-sm text-red-500"}>{formik.errors.subject}</p>
               )}
             </div>
           </div>

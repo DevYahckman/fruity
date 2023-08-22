@@ -43,7 +43,7 @@ function Banner(props) {
             Delicious Seasonal Fruits
           </p>
           <Link
-            to="#"
+            to="/shop"
             className="rounded-full bg-primary text-white py-3
              px-7 no-underline border-primary border-solid border-1 
               hover:bg-black hover:text-primary mr-10 "
@@ -51,7 +51,7 @@ function Banner(props) {
             Fruit Collection
           </Link>
           <Link
-            to="#"
+            to="/contact"
             className="rounded-full bg-transparent text-white py-3 px-7 no-underline border-primary border-solid border-1 hover:bg-primary hover:text-white "
           >
             Contact Us
