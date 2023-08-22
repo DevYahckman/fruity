@@ -6,7 +6,7 @@ import AppHeader from "../appHeader/header";
 
 function Banner({ title, pageName }) {
   const currentUser = useContext(USerContext)
-  console.log(USerContext);
+  // console.log(USerContext);
 
 
   return (

@@ -18,6 +18,7 @@ function Cart(props) {
   const params = useParams();
   const id = params.id;
 
+
   const validateNumber = () => {
     return Yup.object({
       quantity: Yup.number().required("supply quantiyi").min(1),
