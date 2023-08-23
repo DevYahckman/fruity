@@ -131,6 +131,8 @@ function Ragister(props) {
               {" "}
               Sihnup
             </button>
+        <p>Already have account? Login <Link to='/login'> here</Link> </p>
+
           </div>
         </form>
       </div>

@@ -21,23 +21,7 @@ console.log(data);
     }
     getData()
   },[])
-  const productss = [
-    {
-      img: img,
-      name: "Strawberry",
-      Price: 85,
-    },
-    {
-      img: img2,
-      name: "Berry",
-      Price: 85,
-    },
-    {
-      img: img3,
-      name: "Lemon",
-      Price: 85,
-    },
-  ];
+
   return (
     <div>
       <div className="p-5 md:p-10 pb-60">
@@ -64,12 +48,14 @@ console.log(data);
                 <p className="text-deepBlack text-2xl font-bold">
                   {item.price}$
                 </p>
+              <div className="ml-10">
 
                 <CommonButton
                   link={`/shop/${item._id}`}
                   name="Add to Cart"
                   icon={<BsCartFill />}
                 />
+              </div>
               </div>
             </div>
           ))}

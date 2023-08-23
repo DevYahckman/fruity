@@ -35,14 +35,10 @@ function CommentForm(props) {
 
       <div>
         <form action="" onSubmit={formik.handleSubmit}>
-          <div className="grid grid-cols-2 gap-8 w-full">
+          <div className="lg:grid lg:space-x-6 grid-cols-2 lg:gap-8 w-full">
             <div>
               <input
-                className={` h-7 
-        shadow appearance-none
-          border rounded w-full py-2 px-3
-        text-gray-700 leading-tight focus:outline-none 
-        focus:shadow-outline`}
+                className={` focus:border-primary focus:outline-none border-[1px] mb-5 px-2 py-4 md:px-4 text-lightColor w-full text-xl rounded`}
                 name="name"
                 type="text"
                 placeholder={"placeholder"}
@@ -57,12 +53,7 @@ function CommentForm(props) {
             </div>
             <div>
               <input
-                className={` h-7 
-       
-        shadow appearance-none
-      border rounded w-full py-2 px-3
-        text-gray-700 leading-tight focus:outline-none 
-        focus:shadow-outline`}
+                className={`focus:border-primary focus:outline-none border-[1px] mb-5 px-2 py-4 md:px-4 text-lightColor w-full text-xl rounded`}
                 name="email"
                 type="text"
                 placeholder={"placeholder"}
@@ -80,11 +71,7 @@ function CommentForm(props) {
               name="message"
               id="message"
               rows="7"
-              className="block p-2.5 w-full 
-        text-sm text-gray-900
-        shadow appearance-none
-         rounded-lg border focus:outline-none 
-         focus:shadow-outline dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              className="focus:border-primary focus:outline-none border-[1px] mb-5 px-2 py-4 md:px-4 text-lightColor w-full text-xl rounded"
               placeholder="Write your thoughts here..."
               value={formik.values.message}
               onChange={formik.handleChange}

@@ -5,6 +5,7 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import http from "../../services/httpService";
 import config from "../../config.json";
+import { Link } from "react-router-dom";
 function Login(props) {
   const [isLoading, setIsLoading] = useState(false);
   const validateUser = () => {
@@ -73,6 +74,7 @@ function Login(props) {
               <p className={"text-sm text-red-500"}>{formik.errors.password}</p>
             )}
           </div>
+
           <button
             disabled={isLoading}
             type="submit"
@@ -82,6 +84,7 @@ function Login(props) {
             {isLoading ? "Authenticating..." : "Login"}
           </button>
         </form>
+        <p>Dont have account? Register <Link to='/register'> here</Link> </p>
       </div>
     </div>
   );

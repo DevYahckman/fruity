@@ -41,7 +41,7 @@ function App() {
   return (
     <div classNameName="">
       <USerContext.Provider value={currentUser}>
-        {/* {isLoading && <Loader />} */}
+        {isLoading && <Loader />}
 
         <Routes>
           <Route path="/register" element={<Register />} />
