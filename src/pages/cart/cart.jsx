@@ -13,7 +13,6 @@ import USerContext from "../../context/UserContext";
 
 function Cart(props) {
   const user=useContext(USerContext)
-  console.log(user);
   const [product, setProduct] = useState({});
   const params = useParams();
   const id = params.id;

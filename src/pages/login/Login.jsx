@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-// import styles from './login.module.scss'
+import styles from "./login.module.scss";
 import bg from "../../assets/news-bg-1.jpg";
 import { useFormik } from "formik";
 import * as Yup from "yup";
@@ -38,17 +38,18 @@ function Login(props) {
   });
   return (
     <div className={` h-screen flex justify-center pt-36  md:pt-32 `}>
-      <div className="bg-white w-10/12 md:w-3/6 rounded-lg shadow-xl h-1/2 p-5 ">
+      <div className="px-7 py-5 mb-8 md:px-20 lg:px-56   ">
+        <p className="px-2 py-4 md:px-4  bg-lightWhite text-deepBlack font-bold text-xl w-full">
+          Login
+        </p>
         <form action="" onSubmit={formik.handleSubmit}>
           <div>
             <input
               name="email"
               type="email"
               placeholder="Email"
-              className={` 
-               mb-5 px-2 py-4 md:px-4 text-lightColor md:w-[22rem] lg:w-[40rem]  w-full text-xl rounded 
-                border-lightWhite 
-                focus:border-primary focus:outline-none border-[1px]`}
+              className={` ${styles.input} focus:border-primary focus:outline-none
+              mb-5 px-2 py-4 md:px-4 text-lightColor w-full text-xl rounded`}
               value={formik.values.email}
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
@@ -62,10 +63,8 @@ function Login(props) {
               name="password"
               type="password"
               placeholder="Password"
-              className={` 
-               mb-5 px-2 py-4 md:px-4 text-lightColor md:w-[22rem] lg:w-[40rem]  w-full text-xl rounded 
-                border-lightWhite 
-                focus:border-primary focus:outline-none border-[1px]`}
+              className={`  ${styles.input} focus:border-primary focus:outline-none
+              mb-5 px-2 py-4 md:px-4 text-lightColor w-full text-xl rounded`}
               value={formik.values.password}
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
