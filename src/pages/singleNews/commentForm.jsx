@@ -41,7 +41,7 @@ function CommentForm(props) {
                 className={` focus:border-primary focus:outline-none border-[1px] mb-5 px-2 py-4 md:px-4 text-lightColor w-full text-xl rounded`}
                 name="name"
                 type="text"
-                placeholder={"placeholder"}
+                placeholder={"Name"}
                 value={formik.values.name}
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
@@ -56,7 +56,7 @@ function CommentForm(props) {
                 className={`focus:border-primary focus:outline-none border-[1px] mb-5 px-2 py-4 md:px-4 text-lightColor w-full text-xl rounded`}
                 name="email"
                 type="text"
-                placeholder={"placeholder"}
+                placeholder={"Email"}
                 value={formik.values.email}
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
