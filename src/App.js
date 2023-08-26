@@ -18,6 +18,7 @@ import Logout from "./pages/logout/Logout";
 import Login from "./pages/login/Login";
 import PrivateRoutes from "./utils/PrivateRoutes";
 import USerContext from "./context/UserContext";
+import Admin from "./pages/admin/admin";
 
 function App() {
   const [currentUser, setCurrentUser] = useState(null);
@@ -36,7 +37,7 @@ function App() {
       setCurrentUser(user);
       //  console.log(user);
     } catch (ex) {}
-  });
+  },[]);
 
   return (
     <div classNameName="">
@@ -44,6 +45,9 @@ function App() {
         {isLoading && <Loader />}
 
         <Routes>
+        {/* <Route path="/admin/*" element={<Admin/>}/> */}
+          
+          <Route path="/admin/*" element={<Admin />} />
           <Route path="/register" element={<Register />} />
 
           <Route element={<PrivateRoutes user={currentUser} />}>
@@ -58,7 +62,7 @@ function App() {
           <Route path="/about" element={<About user={currentUser} />} />
           <Route path="/" element={<Home />} />
         </Routes>
-        <Footer />
+        {/* <Footer /> */}
       </USerContext.Provider>
     </div>
   );

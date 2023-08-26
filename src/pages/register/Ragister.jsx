@@ -1,5 +1,4 @@
 import React from "react";
-import img from "../../assets/news-bg-1.jpg";
 import styles from "./register.module.scss";
 import { Link } from "react-router-dom";
 import { useFormik } from "formik";
@@ -9,7 +8,7 @@ import config from "../../config.json";
 
 function Ragister(props) {
   const validateUser = () => {
-    name: Yup.object({
+     Yup.object({
       name: Yup.string().required("Enter ur full name"),
       email: Yup.string().required("Supply ur mail").email(),
       phone: Yup.number().required("Enter ur valid phone number"),

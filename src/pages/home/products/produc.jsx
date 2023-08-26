@@ -1,8 +1,4 @@
 import React, { useEffect, useState } from "react";
-import img from "../../../assets/product-img-1.jpg";
-import img2 from "../../../assets/product-img-2.jpg";
-import img3 from "../../../assets/product-img-3.jpg";
-import { Link } from "react-router-dom";
 import { BsCartFill } from "react-icons/bs";
 import Deal from "./deal";
 import { CommonButton } from "../../../utils/buttons";
