@@ -50,6 +50,15 @@ function Cart(props) {
       <div>
         <Banner pageName={"STRAW BERRY "} title={"FRESH AND ORGANIC "} />
       </div>
+      <div className="text-center">
+
+      you can test the payment with
+      <p> CardNumber: 5531886652142950</p>
+      <p>CVV: 565</p>
+      <p>pin:3310</p>
+      <p>Expiry: 09/32</p>
+      <p>OTP:12345</p>
+      </div>
       <div className="grid grid-cols-1 md:grid-cols-2  p-5 lg:p-20 h-auto">
         <div className="">
           <img src={product.imagePath} className="w-52 md:w-72" alt="" />
