@@ -6,6 +6,7 @@ import bg from "../../assets/feature-bg.jpg";
 import JulySales from "../home/about/julySales";
 import OurTeam from "./OurTeam";
 import { CommonButton } from "../../utils/buttons";
+import Footer from "../../components/footer/footer";
 
 function About({ user }) {
   const [isLoading, setIsLoading] = useState(true);
@@ -102,6 +103,7 @@ function About({ user }) {
       <div>
         <OurTeam />
       </div>
+      < Footer/>
     </div>
   );
 }

@@ -5,6 +5,7 @@ import Goods from "./goods";
 import Pagination from './../../utils/pagination';
 import http from '../../services/httpService'
 import config from '../../config.json'
+import Footer from "../../components/footer/footer";
 
 
 function Shop(props) {
@@ -50,7 +51,10 @@ setProducts(data);
       </div>
         )}
 
+
       </div>
+
+      < Footer/>
     </div>
   );
 }

@@ -5,6 +5,7 @@ import { FaMap } from "react-icons/fa";
 import { MdOutlineWatchLater } from "react-icons/md";
 import { BiSolidContact } from "react-icons/bi";
 import Location from "./Location";
+import Footer from "../../components/footer/footer";
 
 function Contact(props) {
   return (
@@ -68,6 +69,8 @@ function Contact(props) {
         </div>
       </div>
       <Location />
+
+      <Footer />
     </div>
   );
 }

@@ -13,7 +13,6 @@ function Produc(props) {
     async function getData(){
 const {data} =await http.get(`${config.apiUrl}/fruits`)
 setProducts(data);
-console.log(data);
     }
     getData()
   },[])

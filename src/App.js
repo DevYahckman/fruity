@@ -47,7 +47,7 @@ function App() {
         <Routes>
         {/* <Route path="/admin/*" element={<Admin/>}/> */}
           
-          <Route path="/admin/*" element={<Admin />} />
+          {/* <Route path="/admin/*" element={<Admin />} /> */}
           <Route path="/register" element={<Register />} />
 
           <Route element={<PrivateRoutes user={currentUser} />}>

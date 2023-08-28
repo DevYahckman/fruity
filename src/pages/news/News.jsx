@@ -4,6 +4,7 @@ import Banner from "../../components/banner/banner";
 import config from "../../config.json";
 import http from "../../services/httpService";
 import Pagination from "../../utils/pagination";
+import Footer from "../../components/footer/footer";
 
 function News(props) {
   const [currentPage, setCurrentPage] = useState(2);
@@ -40,6 +41,8 @@ function News(props) {
           currentPage={currentPage}
         />
       </div>
+
+      < Footer/>
     </div>
   );
 }

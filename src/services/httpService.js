@@ -9,7 +9,7 @@ axios.interceptors.response.use(null, (error) => {
     error.response.status < 500;
 
   if (!expectedError) {
-    alert("An unexpected error occured");
+    console.log("An unexpected error occured");
   }
 
   return Promise.reject(error);
