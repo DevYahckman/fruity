@@ -19,6 +19,8 @@ import Login from "./pages/login/Login";
 import PrivateRoutes from "./utils/PrivateRoutes";
 import USerContext from "./context/UserContext";
 import Admin from "./pages/admin/admin";
+import AdminLogin from "./pages/admin/adminLogin/AdminLogin";
+import AdminPrivateRoute from "./utils/AdminPrivateRoute";
 
 function App() {
   const [currentUser, setCurrentUser] = useState(null);
@@ -37,17 +39,22 @@ function App() {
       setCurrentUser(user);
       //  console.log(user);
     } catch (ex) {}
-  },[]);
+  }, []);
 
   return (
     <div classNameName="">
       <USerContext.Provider value={currentUser}>
-        {isLoading && <Loader />}
+        {/* {isLoading && <Loader />} */}
 
         <Routes>
-        {/* <Route path="/admin/*" element={<Admin/>}/> */}
-          
-          {/* <Route path="/admin/*" element={<Admin />} /> */}
+          <Route element={<AdminPrivateRoute user={currentUser}/> }>
+
+
+          <Route path="/admin/*" element={ <Admin /> } />
+          </Route>
+        
+          <Route path="/adminLogin" element={<AdminLogin />} />
+
           <Route path="/register" element={<Register />} />
 
           <Route element={<PrivateRoutes user={currentUser} />}>
