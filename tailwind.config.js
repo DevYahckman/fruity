@@ -27,7 +27,9 @@ module.exports = {
         lightBg:'#f5f5f5',
         aboutBg:'#007bff',
         formBg:'#012738',
-        lightWhite2:'#fff'
+        lightWhite2:'#fff',
+        dashBg:'#f0f2f5'
+
 
 
       },

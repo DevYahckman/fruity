@@ -36,7 +36,7 @@ function AdminLogin(props) {
   
           navigate("/admin");
           formik.handleReset();
-        //   console.log(jwt);
+          // console.log(jwt);
           setIsLoading(false);
         } catch (error) {
           formik.errors.email = error.response.data;

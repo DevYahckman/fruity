@@ -47,11 +47,11 @@ function App() {
         {/* {isLoading && <Loader />} */}
 
         <Routes>
-          <Route element={<AdminPrivateRoute user={currentUser}/> }>
+          {/* <Route element={<AdminPrivateRoute user={currentUser}/> }> */}
 
 
           <Route path="/admin/*" element={ <Admin /> } />
-          </Route>
+          {/* </Route> */}
         
           <Route path="/adminLogin" element={<AdminLogin />} />
 

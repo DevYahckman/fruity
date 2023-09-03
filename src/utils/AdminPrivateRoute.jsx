@@ -7,7 +7,7 @@ function AdminPrivateRoute({user}) {
     // const [user, setUser] = useState(true)
     return (
         <div>
-            {user? <Outlet/> : <Navigate to={'/adminLogin'} />}
+            {user ? <Outlet/> : <Navigate to={'/adminLogin'} />}
         </div>
     );
 }
