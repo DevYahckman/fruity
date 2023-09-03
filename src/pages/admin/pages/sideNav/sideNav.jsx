@@ -61,7 +61,7 @@ function SideNav({ handleSelect }) {
                   ? "#e93a76"
                   : "",
 
-                  boxShadow:item.location.includes(location.pathname)?"5px 5px 5px black":''
+                  boxShadow:item.location.includes(location.pathname)?"5px 0px 5px black":''
               }}
             >
               <li className="list-none flex flex-row items-center justify-center h-11">

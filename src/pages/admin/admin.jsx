@@ -9,7 +9,7 @@ import Shop from "./pages/shop/Shop";
 function Admin(props) {
   return (
     <div className="flex bg-dashBg  " style={{ height: "100vh" }}>
-      <div className="hidden md:block w-72 mr-4  " style={{backgroundColor:'#37373c'}}>
+      <div className="hidden lg:block w-72 mr-4  " style={{backgroundColor:'#37373c'}}>
         < SideNav/>
         {/* <Link to="/admin/contact">dashbord</Link> */}
       </div>
