@@ -54,12 +54,11 @@ function App() {
           {/* </Route> */}
         
           <Route path="/adminLogin" element={<AdminLogin />} />
-
           <Route path="/register" element={<Register />} />
+            <Route path="/shop" element={<Shop />} />
 
           <Route element={<PrivateRoutes user={currentUser} />}>
             <Route path="/shop/:id" element={<Cart />} />
-            <Route path="/shop" element={<Shop />} />
             <Route path="/news/:id" element={<SingleNews />} />
             <Route path="/news" element={<News />} />
           </Route>
